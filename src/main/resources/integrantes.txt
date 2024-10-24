@@ -1,0 +1,6 @@
+i202215508;12345678;Cristopher Abel;Matias Albiño
+i202214777;44433344;Gisela Joselyne;Torres Perez
+i202212003;87654321;Héctor O;Higgins Arrospide
+i202210038;11112222;Pedro;Mamani valle
+i202217118;77771111;Sandro Francisco;Cabrera Nieto
+i202210592;18745444;Mariajose;Gaspar Valdivia
