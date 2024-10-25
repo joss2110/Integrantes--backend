@@ -12,6 +12,7 @@ import pe.edu.cibertec.backend_integrantes.service.AutenticacionService;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,23 +28,24 @@ public class AutenticacionServiceImpl implements AutenticacionService {
         String[] datosAlumno = null;
         Resource resource = resourceLoader.getResource("classpath:integrantes.txt");
 
-
-        try(BufferedReader br = new BufferedReader(new FileReader(resource.getFile()))){
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(resource.getInputStream()))) {
 
             String linea;
-            while ((linea = br.readLine()) !=null){
+            while ((linea = br.readLine()) != null) {
                 String[] datos = linea.split(";");
-                if(loginResquestDTO.codAlumno().equals(datos[0]) &&
-                        loginResquestDTO.password().equals(datos[1])){
-                    datosAlumno = new String[]{datos[2],datos[3]};
+                if (loginResquestDTO.codAlumno().equals(datos[0]) &&
+                        loginResquestDTO.password().equals(datos[1])) {
+
+                    datosAlumno = new String[]{datos[2], datos[3]};
                     break;
                 }
             }
-        }catch (IOException e){
-            datosAlumno= null;
-            throw  new IOException(e);
+        } catch (IOException e) {
+            datosAlumno = null;
+            throw new IOException(e);
         }
-           return datosAlumno;
+
+        return datosAlumno;
     }
 
     @Override

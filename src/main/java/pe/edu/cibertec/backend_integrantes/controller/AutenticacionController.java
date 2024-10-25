@@ -1,6 +1,5 @@
 package pe.edu.cibertec.backend_integrantes.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.cibertec.backend_integrantes.dto.IntegrantesResponseDTO;
